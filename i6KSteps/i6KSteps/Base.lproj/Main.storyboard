@@ -34,16 +34,27 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2HH-9O-AP5">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaM-Jj-tvT">
+                                                    <rect key="frame" x="25" y="30" width="120" height="120"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="BgO-oz-HX1"/>
+                                                        <constraint firstAttribute="height" constant="120" id="CvS-3x-bOb"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="2HH-9O-AP5" firstAttribute="leading" secondItem="fPM-wz-Iqe" secondAttribute="leading" id="6AS-sv-Rjb"/>
                                                 <constraint firstAttribute="trailing" secondItem="2HH-9O-AP5" secondAttribute="trailing" id="8tg-Bp-GYF"/>
+                                                <constraint firstItem="iaM-Jj-tvT" firstAttribute="centerY" secondItem="fPM-wz-Iqe" secondAttribute="centerY" id="9hg-Un-zKp"/>
+                                                <constraint firstItem="iaM-Jj-tvT" firstAttribute="leading" secondItem="fPM-wz-Iqe" secondAttribute="leadingMargin" constant="10" id="Opa-WI-Ra6"/>
                                                 <constraint firstAttribute="bottom" secondItem="2HH-9O-AP5" secondAttribute="bottom" id="Xj6-x2-goC"/>
                                                 <constraint firstItem="2HH-9O-AP5" firstAttribute="top" secondItem="fPM-wz-Iqe" secondAttribute="top" id="j5N-6A-Pdd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96563040026135227" green="1" blue="0.93899330577880713" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="circleView" destination="iaM-Jj-tvT" id="caF-GI-9j4"/>
                                             <outlet property="gifImageHeader" destination="2HH-9O-AP5" id="ptR-0J-oyY"/>
                                         </connections>
                                     </tableViewCell>

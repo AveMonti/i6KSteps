@@ -11,16 +11,24 @@ import UIKit
 class HeaderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var gifImageHeader: UIImageView!
+    @IBOutlet weak var circleView: UIView!
+    var circle = ProgressCircle()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.gifImageHeader.loadGif(name: "forest")
+        circle = ProgressCircle(view: circleView)
+        circle.setup()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setUpCircle(progressValue: Float){
+        circle.update(currentValue: progressValue)
     }
 
 }

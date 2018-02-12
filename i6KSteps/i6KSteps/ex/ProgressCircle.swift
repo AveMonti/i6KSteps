@@ -31,7 +31,7 @@ class ProgressCircle: CAShapeLayer {
     
     func setup(){
         let center = CGPoint(x: (currentView?.bounds.width)!/2, y: (currentView?.bounds.height)!/2)
-        let circularPath = UIBezierPath(arcCenter: center, radius: 20, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: center, radius: (currentView?.bounds.width)!/2, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
         
     
     
