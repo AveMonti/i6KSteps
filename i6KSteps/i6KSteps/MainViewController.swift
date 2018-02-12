@@ -44,6 +44,7 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundColor = .clear
         
         self.auth()
         

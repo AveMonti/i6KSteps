@@ -67,7 +67,6 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWd-Y5-iQr">
                                                     <rect key="frame" x="311" y="26" width="49" height="49"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="49" id="8tP-cI-2q5"/>
                                                         <constraint firstAttribute="height" constant="49" id="XXT-SI-oBn"/>
