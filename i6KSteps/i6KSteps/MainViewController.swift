@@ -9,8 +9,35 @@
 import UIKit
 import HealthKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataSource{
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "conetenCell") as! ContentTableViewCell
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 240
+    }
+    
 
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+          let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! HeaderTableViewCell
+        
+        return headerCell
+    }
+
+    
+    
+    
     
     var healthStore = HKHealthStore()
     

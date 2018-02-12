@@ -14,6 +14,11 @@
 		6E4C28C02030DA5E00417957 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E4C28BE2030DA5E00417957 /* LaunchScreen.storyboard */; };
 		6E4C28CA2030DA7600417957 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4C28C92030DA7600417957 /* HealthKit.framework */; };
 		9FB003CC8308610DD5D491F6 /* Pods_i6KSteps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692FB6FA03790212A823D167 /* Pods_i6KSteps.framework */; };
+		D3AF05D32031FB6900E506B1 /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF05D22031FB6900E506B1 /* ProgressCircle.swift */; };
+		D3AF05D62031FBC200E506B1 /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF05D52031FBC200E506B1 /* ContentTableViewCell.swift */; };
+		D3AF05D8203202A600E506B1 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF05D7203202A600E506B1 /* UIImage+Gif.swift */; };
+		D3AF05DA2032032800E506B1 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF05D92032032800E506B1 /* HeaderTableViewCell.swift */; };
+		D3AF05DD2032037400E506B1 /* forest.gif in Resources */ = {isa = PBXBuildFile; fileRef = D3AF05DC2032037400E506B1 /* forest.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,11 @@
 		6E4C28C12030DA5E00417957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E4C28C72030DA7600417957 /* i6KSteps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = i6KSteps.entitlements; sourceTree = "<group>"; };
 		6E4C28C92030DA7600417957 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		D3AF05D22031FB6900E506B1 /* ProgressCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
+		D3AF05D52031FBC200E506B1 /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
+		D3AF05D7203202A600E506B1 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		D3AF05D92032032800E506B1 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		D3AF05DC2032037400E506B1 /* forest.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = forest.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +75,9 @@
 		6E4C28B42030DA5E00417957 /* i6KSteps */ = {
 			isa = PBXGroup;
 			children = (
+				D3AF05DB2032036500E506B1 /* sorce */,
+				D3AF05D12031FB3A00E506B1 /* ex */,
+				D3AF05D42031FBAF00E506B1 /* cells */,
 				6E4C28C72030DA7600417957 /* i6KSteps.entitlements */,
 				6E4C28B52030DA5E00417957 /* AppDelegate.swift */,
 				6E4C28B72030DA5E00417957 /* MainViewController.swift */,
@@ -83,6 +96,32 @@
 				692FB6FA03790212A823D167 /* Pods_i6KSteps.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3AF05D12031FB3A00E506B1 /* ex */ = {
+			isa = PBXGroup;
+			children = (
+				D3AF05D7203202A600E506B1 /* UIImage+Gif.swift */,
+				D3AF05D22031FB6900E506B1 /* ProgressCircle.swift */,
+			);
+			path = ex;
+			sourceTree = "<group>";
+		};
+		D3AF05D42031FBAF00E506B1 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				D3AF05D52031FBC200E506B1 /* ContentTableViewCell.swift */,
+				D3AF05D92032032800E506B1 /* HeaderTableViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		D3AF05DB2032036500E506B1 /* sorce */ = {
+			isa = PBXGroup;
+			children = (
+				D3AF05DC2032037400E506B1 /* forest.gif */,
+			);
+			path = sorce;
 			sourceTree = "<group>";
 		};
 		E947DBFC9090BC0A90248AE8 /* Pods */ = {
@@ -162,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E4C28C02030DA5E00417957 /* LaunchScreen.storyboard in Resources */,
+				D3AF05DD2032037400E506B1 /* forest.gif in Resources */,
 				6E4C28BD2030DA5E00417957 /* Assets.xcassets in Resources */,
 				6E4C28BB2030DA5E00417957 /* Main.storyboard in Resources */,
 			);
@@ -231,7 +271,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E4C28B82030DA5E00417957 /* MainViewController.swift in Sources */,
+				D3AF05D32031FB6900E506B1 /* ProgressCircle.swift in Sources */,
 				6E4C28B62030DA5E00417957 /* AppDelegate.swift in Sources */,
+				D3AF05D8203202A600E506B1 /* UIImage+Gif.swift in Sources */,
+				D3AF05DA2032032800E506B1 /* HeaderTableViewCell.swift in Sources */,
+				D3AF05D62031FBC200E506B1 /* ContentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
