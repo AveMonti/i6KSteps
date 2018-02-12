@@ -12,6 +12,8 @@ class ContentTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var circleView: UIView!
+    @IBOutlet weak var stepsCountLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     var circle = ProgressCircle()
     
@@ -19,7 +21,7 @@ class ContentTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         circle = ProgressCircle(view: circleView)
-        circle.setup()
+        circle.setup(loadFromBegin: true)
         
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Erg-93-E7F">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -34,6 +34,10 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2HH-9O-AP5">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8Q-zc-x4a">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.27635343309859156" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaM-Jj-tvT">
                                                     <rect key="frame" x="25" y="30" width="120" height="120"/>
                                                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -42,20 +46,46 @@
                                                         <constraint firstAttribute="height" constant="120" id="CvS-3x-bOb"/>
                                                     </constraints>
                                                 </view>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YNJ-T8-yeB">
+                                                    <rect key="frame" x="173" y="30" width="187" height="99"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12 000 steps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LW6-BE-pcx">
+                                                            <rect key="frame" x="1" y="58" width="183" height="32.5"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                            <color key="textColor" red="0.0" green="1" blue="0.70556652109999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Todays steps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldj-RG-ecT">
+                                                            <rect key="frame" x="1" y="16" width="183" height="35"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                                            <color key="textColor" red="1" green="0.98509220631209371" blue="0.96943084494139153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="2HH-9O-AP5" firstAttribute="leading" secondItem="fPM-wz-Iqe" secondAttribute="leading" id="6AS-sv-Rjb"/>
                                                 <constraint firstAttribute="trailing" secondItem="2HH-9O-AP5" secondAttribute="trailing" id="8tg-Bp-GYF"/>
                                                 <constraint firstItem="iaM-Jj-tvT" firstAttribute="centerY" secondItem="fPM-wz-Iqe" secondAttribute="centerY" id="9hg-Un-zKp"/>
+                                                <constraint firstItem="J8Q-zc-x4a" firstAttribute="leading" secondItem="fPM-wz-Iqe" secondAttribute="leading" id="D5W-j5-exQ"/>
                                                 <constraint firstItem="iaM-Jj-tvT" firstAttribute="leading" secondItem="fPM-wz-Iqe" secondAttribute="leadingMargin" constant="10" id="Opa-WI-Ra6"/>
+                                                <constraint firstAttribute="bottom" secondItem="J8Q-zc-x4a" secondAttribute="bottom" id="SkJ-rd-z7g"/>
                                                 <constraint firstAttribute="bottom" secondItem="2HH-9O-AP5" secondAttribute="bottom" id="Xj6-x2-goC"/>
+                                                <constraint firstItem="J8Q-zc-x4a" firstAttribute="top" secondItem="fPM-wz-Iqe" secondAttribute="top" id="cnM-kg-Jgq"/>
                                                 <constraint firstItem="2HH-9O-AP5" firstAttribute="top" secondItem="fPM-wz-Iqe" secondAttribute="top" id="j5N-6A-Pdd"/>
+                                                <constraint firstAttribute="trailing" secondItem="J8Q-zc-x4a" secondAttribute="trailing" id="vVz-wm-bxA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96563040026135227" green="1" blue="0.93899330577880713" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="circleView" destination="iaM-Jj-tvT" id="caF-GI-9j4"/>
                                             <outlet property="gifImageHeader" destination="2HH-9O-AP5" id="ptR-0J-oyY"/>
+                                            <outlet property="todaysStepCountLabel" destination="LW6-BE-pcx" id="cdA-ej-aaj"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="conetenCell" rowHeight="102" id="WDc-7y-x8I" customClass="ContentTableViewCell" customModule="i6KSteps" customModuleProvider="target">
@@ -72,6 +102,20 @@
                                                         <constraint firstAttribute="height" constant="49" id="XXT-SI-oBn"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12.05.2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJK-MU-BHa">
+                                                    <rect key="frame" x="15" y="58" width="278" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" red="1" green="0.98026947166178102" blue="0.98173638654473361" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12 000 steps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xq-mf-yxF">
+                                                    <rect key="frame" x="15" y="23" width="278" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                    <color key="textColor" red="0.0" green="1" blue="0.70556652114398988" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="UWd-Y5-iQr" secondAttribute="bottom" constant="16" id="Eth-zu-IuG"/>
@@ -82,6 +126,8 @@
                                         <color key="backgroundColor" red="0.96563040030000002" green="1" blue="0.93899330579999996" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="circleView" destination="UWd-Y5-iQr" id="ybn-Pt-HkN"/>
+                                            <outlet property="dateLabel" destination="oJK-MU-BHa" id="Dub-C5-qYj"/>
+                                            <outlet property="stepsCountLabel" destination="5xq-mf-yxF" id="nLJ-qt-qWr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -100,13 +146,32 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9UV-va-nVs"/>
                     <connections>
                         <outlet property="tableView" destination="zvi-v8-wLR" id="eJR-U4-OtU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="476" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3ba-QZ-ITR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Erg-93-E7F" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="25K-3z-wl0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vXd-1W-COs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oyT-b1-fXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-314" y="134"/>
         </scene>
     </scenes>
 </document>

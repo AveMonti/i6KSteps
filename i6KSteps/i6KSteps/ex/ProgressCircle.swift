@@ -13,6 +13,7 @@ class ProgressCircle: CAShapeLayer {
     var shapeLayer: CAShapeLayer?
     var currentView: UIView?
     var trackLayer:CAShapeLayer?
+    var loadFromTheBegin:Bool?
     override init() {
         super.init()
     }
@@ -29,7 +30,8 @@ class ProgressCircle: CAShapeLayer {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(){
+    func setup(loadFromBegin: Bool){
+        self.loadFromTheBegin = loadFromBegin
         let center = CGPoint(x: (currentView?.bounds.width)!/2, y: (currentView?.bounds.height)!/2)
         let circularPath = UIBezierPath(arcCenter: center, radius: (currentView?.bounds.width)!/2, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
         
@@ -56,8 +58,10 @@ class ProgressCircle: CAShapeLayer {
     
     func update(currentValue: Float){
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        if(self.loadFromTheBegin == false){
+            basicAnimation.toValue = currentValue
+        }
         
-        basicAnimation.toValue = currentValue
         
         basicAnimation.duration = 5
         

@@ -13,12 +13,13 @@ class HeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var gifImageHeader: UIImageView!
     @IBOutlet weak var circleView: UIView!
     var circle = ProgressCircle()
+    @IBOutlet weak var todaysStepCountLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.gifImageHeader.loadGif(name: "forest")
         circle = ProgressCircle(view: circleView)
-        circle.setup()
+        circle.setup(loadFromBegin: true)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
