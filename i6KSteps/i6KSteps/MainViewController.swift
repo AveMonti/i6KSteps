@@ -8,19 +8,25 @@
 
 import UIKit
 import HealthKit
+import RealmSwift
 
 class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataSource{
     
-    
+    var realm = RealmService.shared
+    var healthStore = HKHealthStore()
     @IBOutlet weak var tableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return realm.getAll().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "conetenCell") as! ContentTableViewCell
         
+        cell.dateLabel.text = ("\(String(describing: realm.getAll()[indexPath.row].stepsDate))")
+        
+        
+        cell.circle.update(currentValue: 0.6)
         return cell
     }
     
@@ -38,11 +44,13 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     
     
     
-    
-    var healthStore = HKHealthStore()
+
     
     
     override func viewDidLoad() {
+        
+
+        
         super.viewDidLoad()
         self.tableView.backgroundColor = .clear
         
@@ -67,68 +75,68 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         self.updateSteps(completion: { (steps) in
             print(steps)
         })
-        
+
     }
-    
+
     func auth(){
         if HKHealthStore.isHealthDataAvailable(){
             let writeDataTypes = dataTypesToWrite()
             let readDataTypes = dataTypesToWrite()
-            
-            
-            
+
+
+
             healthStore.requestAuthorization(toShare: writeDataTypes as? Set<HKSampleType>, read: readDataTypes as? Set<HKObjectType>, completion: { (success, error) in
                 if(!success){
                     print("error")
-                    
+
                     return
                 }
-                
+
             })
         }
-        
+
     }
-    
+
     func dataTypesToWrite() -> NSSet{
         let stepsCount = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
-        
+
         let returnSet = NSSet(objects: stepsCount!)
         return returnSet
     }
-    
+
     func dataTypesToRead() -> NSSet{
         let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
         let returnSet = NSSet(objects: stepsCount!)
-        
+
         return returnSet
     }
-    
-    
+
+
     func updateSteps(completion: @escaping (Double) -> Void) {
         let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
-        
+
         let now = Date()
         let startOfDay = Calendar.current.startOfDay(for: now)
         let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
-        
+
         let query = HKStatisticsQuery(quantityType: stepsQuantityType, quantitySamplePredicate: predicate, options: .cumulativeSum) { (_, result, error) in
             var resultCount = 0.0
-            
+
             guard let result = result else {
                 print("\(String(describing: error?.localizedDescription)) ")
                 completion(resultCount)
                 return
             }
-            
+
             if let sum = result.sumQuantity() {
                 resultCount = sum.doubleValue(for: HKUnit.count())
             }
-            
+
             DispatchQueue.main.async {
                 completion(resultCount)
             }
         }
-        
+
         healthStore.execute(query)
     }
 
